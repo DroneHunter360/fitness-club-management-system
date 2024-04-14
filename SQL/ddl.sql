@@ -12,12 +12,7 @@ DROP TABLE IF EXISTS Bills;
 DROP TABLE IF EXISTS Maintenance_Equipment CASCADE;
 
 DROP TABLE IF EXISTS EnrollsIn;
-DROP TABLE IF EXISTS Schedules;
-DROP TABLE IF EXISTS AssignedTo;
-DROP TABLE IF EXISTS Teaches;
-DROP TABLE IF EXISTS Manages;
 DROP TABLE IF EXISTS ResponsibleFor;
-DROP TABLE IF EXISTS Processes;
 
 -- logically, when you sign up for fitness membership, ALL the below info. is required, thus none of the fields can be null
 CREATE TABLE IF NOT EXISTS Members (
@@ -54,7 +49,7 @@ CREATE TABLE IF NOT EXISTS Fitness_Goals (
 	goal_description TEXT,
 	goal_value VARCHAR(20),
 	goal_achieved BOOLEAN,
-	PRIMARY KEY (member_id, goal_type, goal_value, goal_achieved),
+	PRIMARY KEY (member_id, goal_type, goal_description, goal_value, goal_achieved),
 	FOREIGN KEY (member_id) REFERENCES Members
 );
 
