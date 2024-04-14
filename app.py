@@ -70,8 +70,9 @@ def update_personal_information():
         new_pwd = input("Enter a new password: ")
         query = f"UPDATE Members SET member_password = '{new_pwd}' WHERE member_username = '{globals()['curr_user']}'"
     elif option == 2:
-        new_email = input("Enter a new password: ")
-        query = f"UPDATE Members SET member_email = '{new_email}' WHERE member_username = '{globals()['curr_user']}'"
+        new_email = input("Enter a new email: ")
+        query = f"UPDATE Members SET email = '{new_email}' WHERE member_username = '{globals()['curr_user']}'"
+        print(query)
     elif option == 3:
         new_fname = input("Enter a new first name: ")
         query = f"UPDATE Members SET first_name = '{new_fname}' WHERE member_username = '{globals()['curr_user']}'"
